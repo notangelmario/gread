@@ -52,6 +52,7 @@ const handler = async (req: Request): Promise<Response> => {
 			<html lang="en">
 				<head>
 					<meta charset="UTF-8">
+					<meta name="viewport" content="width=device-width, initial-scale=1">
 					<title>${article.title}</title>
 					<link rel="stylesheet" href="/style.css">
 					<base href="${url.startsWith("cached/") ? url.slice(7) : url}">
