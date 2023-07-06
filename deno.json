@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"lib": [
+			"deno.ns",
+			"dom",
+			"dom.iterable",
+			"dom.asynciterable"
+		]
+	},
+	"tasks": {
+		"dev": "deno run --watch --allow-net --allow-read=./src src/main.ts"
+	}
+}

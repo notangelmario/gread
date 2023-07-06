@@ -1,0 +1,24 @@
+body {
+	background-color: #282828;
+	color: #ebdbb2;
+	font-family: "DejaVu Sans Mono", monospace;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+h1 {
+	font-size: 3rem;
+}
+
+p {
+	font-size: 1.5rem;
+}
+
+code {
+	font-size: 1.5rem;
+	background-color: #3c3836;
+	border-radius: 5px;
+}
