@@ -8,6 +8,6 @@
 		]
 	},
 	"tasks": {
-		"dev": "deno run --watch --allow-net --allow-read=./src src/main.ts"
+		"dev": "deno run --watch --allow-net --no-check --allow-read=./src src/main.ts"
 	}
 }

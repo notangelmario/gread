@@ -22,3 +22,15 @@ code {
 	background-color: #3c3836;
 	border-radius: 5px;
 }
+
+a, a:active, a:visited {
+	color: #b16286;
+}
+
+hr {
+	width: 100%;
+	border: 0;
+	border-top: 1px solid #3c3836;
+	margin: 1rem 0;
+}
+
