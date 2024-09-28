@@ -1,7 +1,7 @@
 # GRead
 
 GRead is a web app that turns websites into gruvbox styled
-pages that are on the eyes.
+pages that are easier on the eyes.
 
 ## :question: How to
 
