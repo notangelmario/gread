@@ -1,8 +1,8 @@
-import { DOMParser, serve, Readability } from "./deps.ts";
+import { DOMParser, Readability, serve } from "./deps.ts";
 
 
 function replaceSrc(doc: Document, url: string) {
-	// Get the base URL and 
+	// Get the base URL and
 	// replace src with /?proxy=baseURL
 	const base = new URL(url).origin;
 	const srcs = doc.querySelectorAll("[src]");
@@ -35,11 +35,11 @@ function replaceHref(doc: Document, url: string) {
 		href.setAttribute("href", hrefUrl.toString());
 	}
 }
-	
+
 
 const handler = async (req: Request): Promise<Response> => {
 	const { pathname } = new URL(req.url);
-	
+
 	if (pathname === "/" && !new URL(req.url).searchParams.get("proxy")) {
 		return new Response(Deno.readFileSync("./src/resources/index.html"), {
 			headers: {
@@ -86,11 +86,9 @@ const handler = async (req: Request): Promise<Response> => {
 	}
 
 	try {
-		const baseUrl = new URL(url.startsWith("cached/") ? url.slice(7) : url);
-
-		const query = url.startsWith("cached/") ? `http://webcache.googleusercontent.com/search?sclient=psy&hl=en&biw=1440&bih=728&source=hp&q=cache%3A${url.slice(7)}&pbx=1&oq=cache%3A${url.slice(7)}&aq=f&aqi=g5&aql=1&gs_sm=e&gs_upl=3639l7768l0l8083l20l4l0l0l0l0l194l603l0.4l4l0` : url;
-		console.log(query);
-		const res = await fetch(query);
+		const baseUrl = new URL(url);
+		console.log(url);
+		const res = await fetch(url);
 
 		if (!res.ok) {
 			console.log(res);
@@ -129,7 +127,7 @@ const handler = async (req: Request): Promise<Response> => {
 					</main>
 				</body>
 			</html>
-					
+
 		`
 
 		return new Response(html, {
